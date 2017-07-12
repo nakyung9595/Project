@@ -1,0 +1,136 @@
+<form name="projectForm" align=center>
+      <br>
+      <h3 align="center"><font type="bold">Smart Fleet은 다양한 사업과 연계 될 수 있습니다.</font></h3>
+      <h3 align="center"><font type="bold">사업 연계와 관련하여 궁금한 사항을 남겨주세요.</font></h3><br><br>
+
+      <table border=1 width=600 cellspacing=0 align=center>
+        <tr align=center>
+          <td colspan=2 align=center>
+            <md-toolbar class="md-warn">
+              <div class="md-toolbar-tools">
+                <h2 class="md-flex">Smart Fleet Management Service 사업 연계 문의</h2>
+              </div>
+            </md-toolbar>
+          </td>
+        </tr>
+        
+        <tr>
+          <td align="left" width="500">
+            <div layout="row">
+              <md-input-container flex="300">
+                <label>성 명</label>
+                <input required name="clientName" ng-model="project.clientName">
+                <div ng-messages="projectForm.clientName.$error">
+                  <div ng-message="required">이름은 필수로 입력해야 합니다.</div>
+                </div>
+              </md-input-container>
+          </td>        
+          <td align="left">
+              <md-input-container flex="300">
+                <label>회사명</label>
+                <input required name="clientFactory" ng-model="project.clientFactory">
+                <div ng-messages="projectForm.clientFactory.$error">
+                  <div ng-message="required">회사명은 필수로 입력해야 합니다.</div>
+                </div>
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left">
+            <div layout="row">
+              <md-input-container flex="300">
+                <label>연락처</label>
+                <input required name="clientPhone" ng-model="project.clientPhone">
+                <div ng-messages="projectForm.clientPhone.$error">
+                  <div ng-message="required">연락처는 필수로 입력해야 합니다.</div>
+                </div>
+              </md-input-container>
+          </td>
+            <td align="left">
+              <md-input-container class="md-block" flex="300">
+                <label>직 급</label>
+                <input ng-model="project.level">
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan=2 align="left">
+            <div layout="row">
+              <md-input-container class="md-block" flex="600">
+                <label>소 속</label>
+                <input ng-model="project.belong">
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
+
+        <tr align="center">
+          <td align="center" width="50">
+            <md-toolbar class="md-warn">
+              <div layout="row">
+                <label>제 목</label>
+          </td>
+          <td align="center" width="500">
+            <md-toolbar class="md-warn">
+              <md-input-container md-no-float class="md-block">
+                <input required name="Title" ng-model="Title" type="text" placeholder="제목을 입력하세요.">
+                <div ng-messages="projectForm.Title.$error">
+                  <div ng-message="required">제목은 필수로 입력해야 합니다.</div>
+                </div>
+              </md-input-container>
+              </div>
+            </md-toolbar>
+          </td>
+        </tr>
+
+        <tr align=center>
+          <td colspan=2 align=center>
+            <textarea name="infoma" ng-model="infoma" type="textaera" placeholder="문의할 내용을 입력하세요." cols=90 rows=10 style="resize:none"> </textarea>
+          </td>
+        </tr>
+
+        <tr align=center>
+          <td colspan=2 align=center>
+            <md-toolbar class="md-warn">
+              <div class="md-toolbar-tools">
+                <h2 class="md-flex">개인정보 취급방침 동의</h2>
+              </div>
+            </md-toolbar>
+          </td>
+        </tr>
+
+        <tr align-"left">
+          <td colspan=2 align-"left"> 
+            <md-content>
+              <p>개인정보 취급 방침 내용은 .....</p>
+              <p> 이러이러하다.......</p>           
+            </md-content>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan=2 align="left">
+             <md-input-container class="md-block">
+                <md-checkbox name="tos" ng-model="project.tos" required>
+                  동의함
+                </md-checkbox>
+                <div ng-messages="projectForm.tos.$error" multiple md-auto-hide="false">
+                  <div ng-message="required">
+                    개인정보 취급방침에 동의해주셔야 합니다!
+                  </div>
+                </div>
+              </md-input-container>
+          </td>
+        </tr>
+       </table>
+            <div ng-show="project.tos">
+              <md-button class="md-raised" type="submit" ng-click="onclick()">
+                문의하기
+              </md-button>
+            </div>
+         
+      </form>
