@@ -10,4 +10,4 @@ angular.module('hello')
       this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
     }
   }
-})
+})  

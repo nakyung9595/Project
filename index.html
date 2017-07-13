@@ -1,33 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-
     <script src="//unpkg.com/angular@1.5/angular.js"></script>
     <script src="//unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
-
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     
     <!--  Hello Galaxy Code -->
     <script src="hello.js"></script>
     <script src="services/people.js"></script>
     <script src="components/hello.js"></script>
-    <script src="components/form.js"></script>
+    <script src="components/about.js"></script>
     <script src="components/people.js"></script>
     <script src="components/person.js"></script>
+    <script src="components/list.js"></script>
+    <script src="components/detail.js"></script>
+    <script src="services/FormList.js"></script>
     
     <!-- Visualizer and url -->
     <link rel="stylesheet" href="styles.scss">
     <script src="//unpkg.com/show-current-browser-url"></script>
     <script src="//unpkg.com/d3@3"></script>
     <script src="//unpkg.com/ui-router-visualizer@2"></script>
-  </head>
+    
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
   
-  <body ng-app="hello" ng-class="{'debug-sref': debug.uisref, 'debug-view': debug.uiview}">
-
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
@@ -35,9 +29,14 @@
   <!-- Angular Material Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
   
+  </head>
+  
+  <body ng-app="hello" ng-class="{'debug-sref': debug.uisref, 'debug-view': debug.uiview}">
+
+  
     <div class="nav">
       <a ui-sref="hello" ui-sref-active="active">Hello</a>
-      <a ui-sref="form" ui-sref-active="active">Form</a>
+      <a ui-sref="about" ui-sref-active="active">about</a>
       <a ui-sref="people" ui-sref-active="active">People</a>
     </div>
     

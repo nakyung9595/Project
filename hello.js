@@ -1,11 +1,13 @@
-
-var myApp = angular.module('hello', ['ngMaterial', 'ngMessages', 'ui.router']);
+var myApp = angular.module('hello', ['ui.router', 'ngMaterial', 'ngMessages']);
 
 myApp.config(function($stateProvider) {
   // An array of state definitions
+
   var states = [
     { name: 'hello', url: '/hello', component: 'hello' },
-    { name: 'form', url: '/form', component: 'form' },
+    { name: 'about', url: '/about', component: 'about' },
+    { name: 'list', url: '/list', component: 'list' },
+    { name: 'detail', url: '/detail', component: 'detail' },
     
     { 
       name: 'people', 
@@ -36,10 +38,6 @@ myApp.config(function($stateProvider) {
   states.forEach(function(state) {
     $stateProvider.state(state);
   });
-})
-
-
-myApp.run(function($http, $uiRouter) {
-  window['ui-router-visualizer'].visualizer($uiRouter);
-  $http.get('data/people.json', { cache: true });
 });
+
+
