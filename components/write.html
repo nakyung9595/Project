@@ -14,14 +14,14 @@
           </td>
         </tr>
         
-        <pre>{{projectForm | json}}</pre>
-
+      
+         
         <tr>
           <td align="left" width="500">
             <div layout="row">
               <md-input-container flex="300">
                 <label>성 명</label>
-                <input required name="Name" ng-model="qna.Name" minlength="2">
+                <input name="Name" ng-model="qna.Name" required>
                 <div ng-messages="projectForm.Name.$error">
                   <div ng-message="required">이름은 필수로 입력해야 합니다.</div>
                 </div>
@@ -30,7 +30,7 @@
           <td align="left">
               <md-input-container flex="300">
                 <label>회사명</label>
-                <input required name="Company" ng-model="qna.Company">
+                <input name="Company" ng-model="qna.Company" required >
                 <div ng-messages="projectForm.Company.$error">
                   <div ng-message="required">회사명은 필수로 입력해야 합니다.</div>
                 </div>
@@ -44,7 +44,7 @@
             <div layout="row">
               <md-input-container flex="300">
                 <label>연락처</label>
-                <input required name="Phone" ng-model="qna.Phone">
+                <input  name="Phone" ng-model="qna.Phone">
                 <div ng-messages="projectForm.Phone.$error">
                   <div ng-message="required">연락처는 필수로 입력해야 합니다.</div>
                 </div>
@@ -130,7 +130,7 @@
         </tr>
        </table>
       <div ng-show="project.tos">
-        <md-button class="md-raised" type="submit" ng-click="onclick()">
+        <md-button class="md-raised" type="submit" ng-click="onclick()" ng-disabled="projectForm.Company.$pristine">
           문의하기
         </md-button>
       </div>
