@@ -14,13 +14,15 @@
           </td>
         </tr>
         
+        <pre>{{projectForm | json}}</pre>
+
         <tr>
           <td align="left" width="500">
             <div layout="row">
               <md-input-container flex="300">
                 <label>성 명</label>
-                <input required name="clientName" ng-model="qna.clientName">
-                <div ng-messages="projectForm.clientName.$error">
+                <input required name="Name" ng-model="qna.Name" minlength="2">
+                <div ng-messages="projectForm.Name.$error">
                   <div ng-message="required">이름은 필수로 입력해야 합니다.</div>
                 </div>
               </md-input-container>
@@ -28,8 +30,8 @@
           <td align="left">
               <md-input-container flex="300">
                 <label>회사명</label>
-                <input required name="clientFactory" ng-model="qna.clientFactory">
-                <div ng-messages="projectForm.clientFactory.$error">
+                <input required name="Company" ng-model="qna.Company">
+                <div ng-messages="projectForm.Company.$error">
                   <div ng-message="required">회사명은 필수로 입력해야 합니다.</div>
                 </div>
               </md-input-container>
@@ -42,8 +44,8 @@
             <div layout="row">
               <md-input-container flex="300">
                 <label>연락처</label>
-                <input required name="clientPhone" ng-model="qna.clientPhone">
-                <div ng-messages="projectForm.clientPhone.$error">
+                <input required name="Phone" ng-model="qna.Phone">
+                <div ng-messages="projectForm.Phone.$error">
                   <div ng-message="required">연락처는 필수로 입력해야 합니다.</div>
                 </div>
               </md-input-container>
@@ -51,7 +53,7 @@
             <td align="left">
               <md-input-container class="md-block" flex="300">
                 <label>직 급</label>
-                <input ng-model="qna.level">
+                <input ng-model="qna.Position">
               </md-input-container>
             </div>
           </td>
@@ -62,7 +64,7 @@
             <div layout="row">
               <md-input-container class="md-block" flex="600">
                 <label>소 속</label>
-                <input ng-model="qna.belong">
+                <input ng-model="qna.Belong">
               </md-input-container>
             </div>
           </td>
@@ -89,7 +91,7 @@
 
         <tr align=center>
           <td colspan=2 align=center>
-            <textarea name="infoma" ng-model="qna.infoma" type="textaera" placeholder="문의할 내용을 입력하세요." cols=90 rows=10 style="resize:none"> </textarea>
+            <textarea name="Content" ng-model="qna.Content" type="textaera" placeholder="문의할 내용을 입력하세요." cols=90 rows=10 style="resize:none"> </textarea>
           </td>
         </tr>
 

@@ -1,2 +1,2 @@
-<div> Name :  <ng-repeat code in codes | filter: {selected : name === code.name}> {{name}} </div>
+<div> Name :  <ng-repeat="code in codes | filter:{name: 'hi'}"> {{code.name}} </div>
 <a ui-sref="list" ui-sref-active="active"><md-button class="md-raised" type="submit">목록으로 돌아가기</md-button></a>

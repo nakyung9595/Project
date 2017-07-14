@@ -16,7 +16,7 @@ angular.module('hello')
       
       $scope.onclick = function onclick(){       
         console.log('scope:', $scope);
-          FormListService.add($scope.qna.clientName);
+          FormListService.add($scope.qna);
           //$scope.clientName = "";
         
         //$mdToast.show($mdToast.simple().textContent('문의가 완료되었습니다!'));

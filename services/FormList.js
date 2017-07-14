@@ -3,11 +3,11 @@ angular.module('hello').service('FormListService', function() {
             codes: [
                 {
                     // title: '요가',
-                    name: 'hi'
+                    Name: 'hi'
                 },
                 {
                     // title: 'gt',
-                    name: 'lk'
+                    Name: 'lk'
                 }
             ],
 
@@ -15,20 +15,20 @@ angular.module('hello').service('FormListService', function() {
                 return storage.codes;
             },
             
-            add: function(clientName) {
-                var newForm = {
-                    // title: 'dd',
-                    // name: clientName
-                    name : clientName,
-                    // factory : clientFactory,
-                    // phone : clientPhone,
-                    // levels : level,
-                    // belongs : belong,
-                    // Titles : Title,
-                    // infomas : infoma
-                };
+            add: function(obj) {
+                // var newForm = {
+                //     // title: 'dd',
+                //     // name: clientName
+                //     // name : clientName,
+                //     // factory : clientFactory,
+                //     // phone : clientPhone,
+                //     // levels : level,
+                //     // belongs : belong,
+                //     // Titles : Title,
+                //     // infomas : infoma
+                // };
                 
-                storage.codes.push(newForm);
+                storage.codes.push(obj);
             }
         }
 
