@@ -1,4 +1,4 @@
-<form name="projectForm" align=center>
+v<form name="projectForm" align=center>
       <br>
       <h3 align="center"><font type="bold">Smart Fleet은 다양한 사업과 연계 될 수 있습니다.</font></h3>
       <h3 align="center"><font type="bold">사업 연계와 관련하여 궁금한 사항을 남겨주세요.</font></h3><br><br>
@@ -14,14 +14,12 @@
           </td>
         </tr>
         
-        <pre>{{projectForm | json}}</pre>
-
         <tr>
           <td align="left" width="500">
             <div layout="row">
               <md-input-container flex="300">
                 <label>성 명</label>
-                <input required name="Name" ng-model="qna.Name" minlength="2">
+                <input required name="Name" ng-model="qna.Name" maxlength="30">
                 <div ng-messages="projectForm.Name.$error">
                   <div ng-message="required">이름은 필수로 입력해야 합니다.</div>
                 </div>
@@ -30,7 +28,7 @@
           <td align="left">
               <md-input-container flex="300">
                 <label>회사명</label>
-                <input required name="Company" ng-model="qna.Company">
+                <input required name="Company" ng-model="qna.Company" maxlength="30">
                 <div ng-messages="projectForm.Company.$error">
                   <div ng-message="required">회사명은 필수로 입력해야 합니다.</div>
                 </div>
@@ -44,16 +42,20 @@
             <div layout="row">
               <md-input-container flex="300">
                 <label>연락처</label>
-                <input required name="Phone" ng-model="qna.Phone">
-                <div ng-messages="projectForm.Phone.$error">
-                  <div ng-message="required">연락처는 필수로 입력해야 합니다.</div>
-                </div>
+                <input name="Phone" ng-model="qna.Phone" ng-pattern="/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/" >
+                  <!--<div class="hint" ng-if="showHints">###-####-####</div>-->
+                  <div ng-messages="projectForm.Phone.$error">
+                    <div ng-message="pattern">###-####-#### 숫자 형태로 입력해주세요.</div>
+                  </div>
               </md-input-container>
           </td>
             <td align="left">
               <md-input-container class="md-block" flex="300">
                 <label>직 급</label>
-                <input ng-model="qna.Position">
+                <input name="Position" ng-model="qna.Position" maxlength="10" minlength="2">
+                <div ng-messages="projectForm.Position.$error">
+                  <div ng-message="minlength">두글자 이상 열글자 이하로 입력해주세요.</div>
+                </div>  
               </md-input-container>
             </div>
           </td>
@@ -62,9 +64,12 @@
         <tr>
           <td colspan=2 align="left">
             <div layout="row">
-              <md-input-container class="md-block" flex="600">
+              <md-input-container class="md-block" flex="300">
                 <label>소 속</label>
-                <input ng-model="qna.Belong">
+                <input name="Belong "ng-model="qna.Belong" maxlength="10" minlength="2">
+                <div ng-messages="projectForm.Belong.$error">
+                  <div ng-message="minlength">두글자 이상 열글자 이하로 입력해주세요.</div>
+                </div> 
               </md-input-container>
             </div>
           </td>
@@ -79,9 +84,10 @@
           <td align="center" width="500">
             <md-toolbar class="md-warn">
               <md-input-container md-no-float class="md-block">
-                <input required name="Title" ng-model="qna.Title" type="text" placeholder="제목을 입력하세요.">
+                <input required name="Title" ng-model="qna.Title" type="text" placeholder="제목을 입력하세요." minlength="2">
                 <div ng-messages="projectForm.Title.$error">
                   <div ng-message="required">제목은 필수로 입력해야 합니다.</div>
+                   <div ng-message="minlength">최소 두글자 이상 입력해주세요.</div>
                 </div>
               </md-input-container>
               </div>
@@ -91,7 +97,10 @@
 
         <tr align=center>
           <td colspan=2 align=center>
-            <textarea name="Content" ng-model="qna.Content" type="textaera" placeholder="문의할 내용을 입력하세요." cols=90 rows=10 style="resize:none"> </textarea>
+            <textarea name="Content" ng-model="qna.Content" type="textaera" placeholder="문의할 내용을 입력하세요." cols=90 rows=10 style="resize:none" minlength="30"> </textarea>
+            <div ng-messages="projectForm.Content.$error">
+                  <div ng-message="minlength">최소 30자 이상 입력해주세요.</div>
+              </div>
           </td>
         </tr>
 

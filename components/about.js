@@ -21,7 +21,7 @@ angular.module('hello')
         
         //$mdToast.show($mdToast.simple().textContent('문의가 완료되었습니다!'));
         //$location.path('/components/list.html');
-        $state.transitionTo("list");
+        //$state.transitionTo("list");
       };
     }
   }
