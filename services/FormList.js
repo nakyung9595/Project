@@ -1,15 +1,6 @@
 angular.module('hello').service('FormListService', function() { 
         var storage = {
-            codes: [
-                {
-                    // title: '요가',
-                    Name: 'hi'
-                },
-                {
-                    // title: 'gt',
-                    Name: 'lk'
-                }
-            ],
+            codes: [ ],
 
             get: function() {
                 return storage.codes;

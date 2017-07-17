@@ -41,11 +41,11 @@
           <td align="left">
             <div layout="row">
               <md-input-container flex="300">
-                <label>연락처</label>
-                <input name="Phone" ng-model="qna.Phone" ng-pattern="/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/" >
+                <label>이메일</label>
+                <input type="email" name="Email" ng-model="qna.Email"  >
                   <!--<div class="hint" ng-if="showHints">###-####-####</div>-->
-                  <div ng-messages="projectForm.Phone.$error">
-                    <div ng-message="pattern">###-####-#### 숫자 형태로 입력해주세요.</div>
+                  <div ng-messages="projectForm.Email.$error">
+                    
                   </div>
               </md-input-container>
           </td>

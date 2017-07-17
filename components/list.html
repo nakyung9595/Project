@@ -3,7 +3,17 @@
       <h3 align="center"><font type="bold">Smart Fleet은 다양한 사업과 연계 될 수 있습니다.</font></h3>
       <h3 align="center"><font type="bold">사업 연계와 관련하여 궁금한 사항을 남겨주세요.</font></h3><br><br>
 
-      <ul>
-            <li ng-repeat="code in codes"> <a ui-sref="detail" ui-sref-active="active"> {{code.Title}} </a> {{code.Name}} , {{code.Company}}, {{code.Phone}}</li>
-      </ul>
+      <table border=1 width=600 cellspacing=0 align=center>
+            <tr align="center">
+                  <td>제목</td>
+                  <td>작성자</td>
+                  <td>회사명</td>
+            </tr>
+
+            <tr align="center" ng-repeat="code in codes">
+                  <td> <a ui-sref="detail" ui-sref-active="active"> {{code.Title}} </a> </td>
+                  <td> {{code.Name}} </td>
+                  <td> {{code.Company}} </td>
+            </tr>
+      </table>
 </form>
