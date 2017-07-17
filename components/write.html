@@ -1,4 +1,4 @@
-v<form name="projectForm" align=center>
+<form name="projectForm" align=center>
       <br>
       <h3 align="center"><font type="bold">Smart Fleet은 다양한 사업과 연계 될 수 있습니다.</font></h3>
       <h3 align="center"><font type="bold">사업 연계와 관련하여 궁금한 사항을 남겨주세요.</font></h3><br><br>
@@ -139,7 +139,7 @@ v<form name="projectForm" align=center>
         </tr>
        </table>
       <div ng-show="project.tos">
-        <md-button class="md-raised" type="submit" ng-click="onclick()">
+        <md-button class="md-raised" type="submit" ng-click="onclick()" ng-disabled="projectForm.Company.$pristine">
           문의하기
         </md-button>
       </div>
