@@ -23,7 +23,7 @@
                 <!--<div ng-messages="projectForm.Name.$error">
                   <div ng-message="required">이름은 필수로 입력해야 합니다.</div>
                 </div>-->
-                <p style="color:red" ng-show="projectForm.Name.$touched || projectForm.Name.$invalid">
+                <p style="color:red" ng-show="projectForm.Name.$touched && projectForm.Name.$invalid">
                   ff
                 </p>
               </md-input-container>
@@ -145,6 +145,5 @@
         <md-button class="md-raised" type="submit">
           문의하기
         </md-button>
-      </div>
-         
+      </div>         
       </form>
