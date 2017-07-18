@@ -53,10 +53,10 @@
             <td align="left">
               <md-input-container flex="300">
                 <label>전화번호</label>
-                <input name="phone" ng-model="qna.phone" ng-pattern="/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/">
-                <div ng-messages="qnaform.phone.$error">
+                <input name="phone" ng-model="qna.phone" placeholder="010-1234-5678" ui-mask="999-9999-9999">
+                <!--<div ng-messages="qnaform.phone.$error">
                   <div ng-message-exp="['pattern']">숫자로 입력해주세요.(000-0000-0000)</div>
-                </div> 
+                </div> -->
               </md-input-container>
             </div>
           </td>
@@ -67,7 +67,7 @@
               <md-input-container flex="300">
                 <label>직 급</label>
                <input name="position" ng-model="qna.position" minlength="2">
-                  <div style="font-size:9px ; color:slategrey" ng-show="qnaform.position.$untouched">신입,대리,부장등과 같은 직급을 써주세요.</div>
+                <div style="font-size:9px ; color:slategrey" ng-hide="qnaform.position.$viewValue.length > 0">신입,대리,부장등과 같은 직급을 써주세요.</div>
                 <div ng-messages="qnaform.position.$error">
                   <div ng-message="minlength">최소 두글자 이상 입력해주세요.</div>       
                 </div>
@@ -79,8 +79,9 @@
             <div layout="row">
               <md-input-container flex="300">
                 <label>소 속</label>
-                <input name="belong" ng-model="qna.belong" minlength="2">
-                <div ng-messages="qnaform.belong.$error">
+                <input name="division" ng-model="qna.division" minlength="2">
+                <div style="font-size:9px ; color:slategrey" ng-hide="qnaform.division.$viewValue.length > 0">자신이 속한 부서명을 써주세요.</div>
+                <div ng-messages="qnaform.division.$error">
                   <div ng-message="minlength">최소 두글자 이상 입력해주세요.</div>       
                 </div> 
               </md-input-container>
