@@ -41,9 +41,10 @@
           <td align="left">
             <div layout="row">
               <md-input-container flex="300">
-                <label>이메일</label>
+                <label>E-mail</label>
                 <input required name="email" ng-model="qna.email" ng-pattern="/^.+@.+\..+$/" >
-                <div ng-messages="qnaform.email.$error">
+                <div style="font:6pt" ng-show="qnaform.email.$untouched">이 문의에 대한 답변은 E-mail로 발송됩니다.</div>
+                <div ng-messages="qnaform.email.$error" ng-if="!showHints">
                   <div ng-message="required">이메일은 필수로 입력해야 합니다.</div>       
                   <div ng-message-exp="['pattern']">이메일 형식을 지켜주세요.(aaa @ aaa.aaa)</div>
                 </div> 
@@ -108,10 +109,12 @@
 
         <tr align=center>
           <td colspan=2 align=center>
-            <textarea name="content" ng-model="qna.content" type="textaera" placeholder="문의할 내용을 입력하세요." cols=90 rows=10 style="resize:none" minlength="30"> </textarea>
+            <md-input-container flex="300" md-no-float>
+            <textarea name="content" ng-model="qna.content" type="textaera" placeholder="문의할 내용을 입력하세요." cols=90 rows=10 style="resize:none" minlength="30" md-maxlength="800"> </textarea>
             <div ng-messages="qnaform.content.$error">
               <div ng-message="minlength">최소 30자 이상 입력해주세요.</div>
             </div>
+            </md-input-container>
           </td>
         </tr>
 
