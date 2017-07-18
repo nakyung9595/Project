@@ -1,3 +1,4 @@
+'use strict';
 angular.module('hello').component('detail', {
   templateUrl:  '/components/detail.html',
   
@@ -5,3 +6,5 @@ angular.module('hello').component('detail', {
       $scope.codes = FormListService.get();      
     }
 });
+
+

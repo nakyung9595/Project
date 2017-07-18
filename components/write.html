@@ -52,9 +52,9 @@
             <td align="left">
               <md-input-container flex="300">
                 <label>전화번호</label>
-                <input name="phone" ng-model="qna.phone" ng-pattern="/^[(][0-9]{3}[)] [0-9]{4}-[0-9]{4}$/">
+                <input name="phone" ng-model="qna.phone" ng-pattern="/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/">
                 <div ng-messages="qnaform.phone.$error">
-                  <div ng-message-exp="['pattern']">숫자로 입력해주세요.(000 - 0000 - 0000)</div>
+                  <div ng-message-exp="['pattern']">숫자로 입력해주세요.(000-0000-0000)</div>
                 </div> 
               </md-input-container>
             </div>

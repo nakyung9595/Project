@@ -1,2 +1,30 @@
-<div> Name :  <ng-repeat="code in codes | filter:{name: 'hi'}"> {{code.name}} </div>
-<a ui-sref="list" ui-sref-active="active"><md-button class="md-raised" type="submit">목록으로 돌아가기</md-button></a>
+<table border=1 width=600 cellspacing=0 align=center>
+    <tr align="center">
+        <td>성 명</td>
+        <td>회사명</td>
+        <td>이메일</td>
+        <td>연락처</td>
+        <td>직 급</td>
+        <td>소 속</td>
+        <td>제 목</td>
+        <td>내 용</td>
+    </tr>
+
+    <tr align="center" ng-repeat="code in codes | filter :{{ qna.title}}" >
+        <td> {{code.name}} </td>
+        <td> {{code.company}} </td>
+        <td> {{code.email}} </td>
+        <td> {{code.phone}} </td>
+        <td> {{code.position}} </td>
+        <td> {{code.belong}} </td>
+        <td> {{code.title}} </td>
+        <td> {{code.content}} </td>
+    </tr>
+</table>
+
+<a ui-sref="list" ui-sref-active="active">
+    <md-button class="md-raised" type="submit">목록으로 돌아가기</md-button>
+</a>
+
+
+
