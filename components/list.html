@@ -26,32 +26,35 @@
             </md-table-container>
       </md-card>
 
-      <!--<md-data-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks " ></md-data-table-pagination>-->
       <md-table-pagination md-limit="condition.limit" md-limit-options="limitOptions" md-page="condition.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks" 
                               md-page-select="options.pageSelector">
       </md-table-pagination>            
-      <div style="font-size:9px ; color:slategrey" ng-hide="selected.length == 0"><table border=1 width=600 cellspacing=0 align=center>
-    <tr align="center">
-        <td>성 명</td>
-        <td>회사명</td>
-        <td>이메일</td>
-        <td>연락처</td>
-        <td>직 급</td>
-        <td>소 속</td>
-        <td>제 목</td>
-        <td>내 용</td>
-    </tr>
+</p>
 
-    <tr align="center" ng-repeat="code in codes">
-        <td> {{code.name}} </td>
-        <td> {{code.company}} </td>
-        <td> {{code.email}} </td>
-        <td> {{code.phone}} </td>
-        <td> {{code.position}} </td>
-        <td> {{code.belong}} </td>
-        <td> {{code.title}} </td>
-        <td> {{code.content}} </td>
-    </tr>
-</table>
-</div>
+<p ng-hide="selected.length == 0">
+      <md-table-container>
+            <table border=1 width=600 cellspacing=0 align=center>
+                  <tr align="center">
+                        <td>성 명</td>
+                        <td>회사명</td>
+                        <td>이메일</td>
+                        <td>연락처</td>
+                        <td>직 급</td>
+                        <td>소 속</td>
+                        <td>제 목</td>
+                        <td>내 용</td>
+                  </tr>
+
+                  <tr align="center" ng-repeat="code in codes">
+                        <td> {{code.name}} </td>
+                        <td> {{code.company}} </td>
+                        <td> {{code.email}} </td>
+                        <td> {{code.phone}} </td>
+                        <td> {{code.position}} </td>
+                        <td> {{code.belong}} </td>
+                        <td> {{code.title}} </td>
+                        <td> {{code.content}} </td>
+                  </tr>
+            </table>
+      </md-table-container>
 </p>
