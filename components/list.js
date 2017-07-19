@@ -8,22 +8,22 @@ angular.module('hello')
 
       $scope.query = {
       
-        order: 'name',
+        order: '',
         limit: 5,
-        page: 1
-  };
+        page: 1,
+        direction : 'desc'
+      };
 
-  $scope.options = {
-    //autoSelect: true,
-    boundaryLinks: true,
-    //largeEditDialog: true,
-    pageSelector: true,
-    rowSelection: true
-  };
-  $scope.limitOptions = [5, 10, 15]; //How many entries per page options
+      $scope.options = {
+        //autoSelect: true,
+        boundaryLinks: true,
+        //largeEditDialog: true,
+        pageSelector: true,
+        rowSelection: true
+      };
 
-
-  
+      $scope.limitOptions = [5, 10, 15]; 
+      
     }
   }
 )
