@@ -1,44 +1,36 @@
-<!--<form name="projectForm" align=center>
-      <br>
-      <h3 align="center"><font type="bold">Smart Fleet은 다양한 사업과 연계 될 수 있습니다.</font></h3>
-      <h3 align="center"><font type="bold">사업 연계와 관련하여 궁금한 사항을 남겨주세요.</font></h3><br><br>
-
-      <table border=1 width=600 cellspacing=0 align=center>
-            <tr align="center">
-                  <td>제목</td>
-                  <td>작성자</td>
-                  <td>회사명</td>
-            </tr>
-
-            <tr align="center" ng-repeat="code in codes">
-                  <td> <a ui-sref="detail" ui-sref-active="active"> {{code.title}} </a> </td>
-                  <td> {{code.name}} </td>
-                  <td> {{code.company}} </td>
-            </tr>
-      </table>
-</form>-->
-
 <p>
-  <md-table-container>
-     <table md-table md-progress="promise" ng-model="selected">
-            <thead md-head md-order="sort.order">
-              <tr md-row>
-                <th md-column md-order-by="title"><span>제 목</span></th>
-                <th md-column md-order-by="name"><span>작성자</span></th>
-                <th md-column><span>회사명</span></th>
-              </tr>
-            </thead>
-            <tbody md-body>
-              <tr md-row md-select="code" ng-repeat="code in codes | orderBy: sort.order| limitTo: condition.limit : (condition.page -1) * condition.limit">
-                <td md-cell>{{code.title}}</td>
-                <td md-cell>{{code.name}}</td>
-                <td md-cell>{{code.company}}</td>
-              </tr>
-            </tbody>
-          </table>
-         </md-table-container>
+      <md-card style="margin:0px">
+            <md-input-container style="margin:15px;">
+                  <label>Search</label>
+                  <input type="text" ng-model="search">
+            </md-input-container>
 
-         <!--<md-data-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks " ></md-data-table-pagination>-->
-         <md-table-pagination md-limit="condition.limit" md-limit-options="limitOptions" md-page="condition.page" md-total="{{codes.length}}" md-page-select="options.pageSelect"></md-table-pagination>
-      
+            <md-table-container>
+                  <table md-table md-progress="promise"  ng-model="selected">
+                        <thead md-head md-order="sort.order">
+                              <tr md-row>
+                                    <th md-column md-order-by="title"><span>제 목</span></th>
+                                    <th md-column md-order-by="name"><span>작성자</span></th>
+                                    <th md-column><span>회사명</span></th>
+                              </tr>
+                        </thead>
+
+                        <tbody md-body>
+                              <tr md-row md-select="code" md-select-id="name" md-auto-select="options.autoSelect" ng-repeat="code in codes | filter:search | orderBy: sort.order | limitTo: condition.limit : (condition.page -1) * condition.limit">
+                                    <td md-cell>{{code.title}}</td>
+                                    <td md-cell>{{code.name}}</td>
+                                    <td md-cell>{{code.company}}</td>
+                              </tr>
+                        </tbody>
+                  </table>
+            </md-table-container>
+      </md-card>
+
+      <!--<md-data-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks " ></md-data-table-pagination>-->
+      <md-table-pagination md-limit="condition.limit" md-limit-options="limitOptions" md-page="condition.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks" 
+                              md-page-select="options.pageSelector">
+      </md-table-pagination>
+
+      {{selected}}
+            
 </p>

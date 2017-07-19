@@ -3,7 +3,10 @@
 angular.module('hello')
   .component('list', {
   templateUrl:  '/components/list.html',
-   controller: function($scope, FormListService) {
+   controller: function($scope, $q, FormListService) {
+    //  var deferred = $q.defer();
+    //  $scope.promise = deferred.promise;
+
       $scope.codes = FormListService.get();   
 
       $scope.condition = {
@@ -12,14 +15,13 @@ angular.module('hello')
       };
 
       $scope.options = {
-        //autoSelect: true,
+        autoSelect: true,
         boundaryLinks: true,
         //largeEditDialog: true,
         pageSelector: true,
-        rowSelection: true
       };
 
-      $scope.limitOptions = [5, 10, 15]; 
+      $scope.limitOptions = [5, 10, 20]; 
       
     }
   }
