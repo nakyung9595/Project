@@ -6,7 +6,7 @@ angular.module('hello')
     controller: function($scope, $mdToast, $state, FormListService) {
       //$scope.clientName = 'aaa';
 
-      $scope.onclick = function onclick(form){
+      $scope.qnasave = function qnasave(form){
         console.log('scope:', $scope);
         console.log('form:', form);
         FormListService.add($scope.qna);

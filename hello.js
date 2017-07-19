@@ -1,4 +1,4 @@
-var myApp = angular.module('hello', ['ui.mask','ui.router', 'ngMaterial', 'ngMessages']);
+var myApp = angular.module('hello', ['md.data.table', 'ui.mask','ui.router', 'ngMaterial', 'ngMessages']);
 
 myApp.config(function($stateProvider) {
   // An array of state definitions

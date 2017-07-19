@@ -1,6 +1,34 @@
 angular.module('hello').service('FormListService', function() { 
         var storage = {
-            codes: [ ],
+            codes: [
+                {
+                   name : 'dd'
+                },
+                 {
+                   name : 'ss'
+                },
+                 {
+                   name : 'qq'
+                },
+                 {
+                   name : 'ee'
+                },
+                 {
+                   name : 'gg'
+                },
+                 {
+                   name : 'vv'
+                },
+                 {
+                   name : 'nn'
+                },
+                 {
+                   name : 'oo'
+                },
+                 {
+                   name : 'mm'
+                }
+             ],
 
             get: function() {
                 return storage.codes;
