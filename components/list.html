@@ -20,7 +20,7 @@
 
 <p>
   <md-table-container>
-          <table md-table align="center">
+     <table md-table>
             <thead md-head>
               <tr md-row>
                 <th md-column><span>제 목</span></th>
@@ -29,12 +29,16 @@
               </tr>
             </thead>
             <tbody md-body>
-              <tr md-row md-select="code" ng-repeat="code in codes">
+              <tr md-row md-select="code" ng-repeat="code in codes | limitTo: query.limit : (query.page -1) * query.limit">
                 <td md-cell>{{code.title}}</td>
                 <td md-cell>{{code.name}}</td>
                 <td md-cell>{{code.company}}</td>
               </tr>
             </tbody>
           </table>
-        </md-table-container>
+         </md-table-container>
+
+         <!--<md-data-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks " ></md-data-table-pagination>-->
+         <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{codes.count}}" md-page-select="options.pageSelect"></md-table-pagination>
+      
 </p>
