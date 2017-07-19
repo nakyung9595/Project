@@ -22,7 +22,7 @@ angular.module('hello')
       };
 
       $scope.limitOptions = [5, 10, 20]; 
-      
+      $scope.selected = [ ];
     }
   }
 )

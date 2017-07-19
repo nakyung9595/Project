@@ -2,30 +2,40 @@ angular.module('hello').service('FormListService', function() {
         var storage = {
             codes: [
                 {
+                   title :'아아',
                    name : 'dd'
                 },
                  {
-                   name : 'aa'
+                     title :'가가',
+                   name : 'aa',
+                   content : 'dd'
                 },
                  {
+                     title :'라라',
                    name : 'cc'
                 },
                  {
+                     title :'다다',
                    name : 'ee'
                 },
                  {
+                     title :'나나',
                    name : 'bb'
                 },
                  {
+                     title :'마마',
                    name : 'ff'
                 },
                  {
+                     title :'자자',
                    name : 'gg'
                 },
                  {
+                     title :'사사',
                    name : 'ii'
                 },
                  {
+                     title :'바바',
                    name : 'hh'
                 }
              ],
