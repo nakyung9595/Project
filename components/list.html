@@ -20,16 +20,16 @@
 
 <p>
   <md-table-container>
-     <table md-table>
-            <thead md-head>
+     <table md-table md-progress="promise" ng-model="selected">
+            <thead md-head md-order="sort.order">
               <tr md-row>
-                <th md-column><span>제 목</span></th>
+                <th md-column md-order-by="title"><span>제 목</span></th>
                 <th md-column md-order-by="name"><span>작성자</span></th>
                 <th md-column><span>회사명</span></th>
               </tr>
             </thead>
             <tbody md-body>
-              <tr md-row md-select="code" ng-repeat="code in codes | orderBy: query.order| limitTo: query.limit : (query.page -1) * query.limit">
+              <tr md-row md-select="code" ng-repeat="code in codes | orderBy: sort.order| limitTo: condition.limit : (condition.page -1) * condition.limit">
                 <td md-cell>{{code.title}}</td>
                 <td md-cell>{{code.name}}</td>
                 <td md-cell>{{code.company}}</td>
@@ -39,6 +39,6 @@
          </md-table-container>
 
          <!--<md-data-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks " ></md-data-table-pagination>-->
-         <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{codes.length}}" md-page-select="options.pageSelect"></md-table-pagination>
+         <md-table-pagination md-limit="condition.limit" md-limit-options="limitOptions" md-page="condition.page" md-total="{{codes.length}}" md-page-select="options.pageSelect"></md-table-pagination>
       
 </p>

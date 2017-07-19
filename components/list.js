@@ -6,12 +6,9 @@ angular.module('hello')
    controller: function($scope, FormListService) {
       $scope.codes = FormListService.get();   
 
-      $scope.query = {
-      
-        order: '',
+      $scope.condition = {
         limit: 5,
         page: 1,
-        direction : 'desc'
       };
 
       $scope.options = {
