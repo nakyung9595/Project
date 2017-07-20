@@ -8,7 +8,7 @@ angular.module('hello')
     //  $scope.promise = deferred.promise;
 
       $scope.codes = FormListService.get();   
-
+      $scope.currentPage = 1;
       $scope.condition = {
         limit: 5,
         page: 1,

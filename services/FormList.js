@@ -3,7 +3,13 @@ angular.module('hello').service('FormListService', function() {
             codes: [
                 {
                    title :'아아',
-                   name : 'dd'
+                   name : 'dd',
+                   company: '허밍탑',
+                   phone : '010-3333-2222',
+                   position : '부장',
+                   title : '문의엽',
+                   content : '이게 뭔가용    ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㄹㄴㅇㄹㄴㅇㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㅇㄹㅇㄹㅇㄹㄹㅇㄹㄴㅇㄹㅇㄹㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㄹㅇㄹ',
+                   division : '앵귤'
                 },
                  {
                      title :'가가',
