@@ -69,6 +69,7 @@ body.debug-view {
       background-color: darkgrey;
       margin: 0 -1em;
       padding: 0 1em;
+      
     }
       
     &:empty:after {
@@ -87,3 +88,39 @@ body.debug-view {
 .md-checkbox-column {
   display:none;
 }
+
+.md-no-momentum{
+  align-content:center;
+   align-self: center;
+   
+     color: #444;
+     text-decoration-line: pink;
+     text-decoration: pink;
+     word-break:break-all;
+     white-space: normal;
+     
+    
+}
+
+.md-block{
+   align-content:center;
+   align-self: center;
+   
+     color: #444;
+     text-decoration-line: pink;
+       text-decoration: pink;
+       word-break:break-all;
+       white-space: normal;
+      
+     
+}
+
+.md-input-container{
+   word-break:break-all;
+   white-space: normal;
+   word-break:keep-all;
+   color:pink;
+}
+
+
+

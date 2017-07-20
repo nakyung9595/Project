@@ -28,69 +28,164 @@
 
       <md-table-pagination md-limit="condition.limit" md-limit-options="limitOptions" md-page="condition.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks" 
                               md-page-select="options.pageSelector">
-      </md-table-pagination>            
+      </md-table-pagination>           
+      
 </p>
 
 <p ng-hide="selected.length == 0">
-      <!--<md-table-container>
-            <table border=1 width=600 cellspacing=0 align=center>
-                  <tr align="center">
-                        <td>성 명</td>
-                        <td>회사명</td>
-                        <td>이메일</td>
-                        <td>연락처</td>
-                        <td>직 급</td>
-                        <td>소 속</td>
-                        <td>제 목</td>
-                        <td>내 용</td>
-                  </tr>
-
-                  <tr align="center">
-                        <td> {{selected[0].name}} </td>
-                        <td> {{selected[0].company}} </td>
-                        <td> {{selected[0].email}} </td>
-                        <td> {{selected[0].phone}} </td>
-                        <td> {{selected[0].position}} </td>
-                        <td> {{selected[0].belong}} </td>
-                        <td> {{selected[0].title}} </td>
-                        <td> {{selected[0].content}} </td>
-                  </tr>
-            </table>
-      </md-table-container>-->
-
-    
-  <md-content class="md-no-momentum">
+     <!--<md-content class="md-no-momentum">
     <md-input-container class="md-icon-float md-block">
-      <!-- Use floating label instead of placeholder -->
-      <label>Name</label>
-      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
-      <input type="text" value="{{selected[0].name}}" disabled>
+      <label>성명</label>
+      <md-icon md-svg-src="img/icons/ic_person_24px.svg"></md-icon>
+      <input type="text" value="{{selected[0].name}}" size=50 disabled>
     </md-input-container>
 
     <md-input-container md-no-float class="md-block">
+      <label>회사명</label>
       <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
-      <input ng-model="user.phone" type="text" placeholder="Phone Number">
+       <input type="text" value="{{selected[0].company}}" disabled>
     </md-input-container>
 
     <md-input-container class="md-block">
-      <!-- Use floating placeholder instead of label -->
+           <label>이메일</label>
+    
       <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
-      <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+       <input type="text" value="{{selected[0].email}}" disabled>
     </md-input-container>
 
     <md-input-container md-no-float class="md-block">
-      <input ng-model="user.address" type="text" placeholder="Address" >
+           <label>연락처</label>
       <md-icon md-svg-src="img/icons/ic_place_24px.svg"></md-icon>
+        <input type="text" value="{{selected[0].phone}}" disabled>
+   </md-input-container>
+
+    <md-input-container class="md-icon-float md-icon-right md-block">
+      <label>직급</label>
+      <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
+         <input type="text" value="{{selected[0].position}}" disabled>
+      <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
     </md-input-container>
 
     <md-input-container class="md-icon-float md-icon-right md-block">
-      <label>Donation Amount</label>
+      <label>소속</label>
       <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
-      <input ng-model="user.donation" type="number" step="0.01">
+         <input type="text" value="{{selected[0].division}}" disabled>
+      <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+    </md-input-container>
+    <md-input-container class="md-icon-float md-icon-right md-block">
+      <label>제목</label>
+      <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
+         <input type="text" value="{{selected[0].title}}" disabled>
+      <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+    </md-input-container>
+    
+    <md-input-container class="md-icon-float md-icon-right md-block " >
+      <label>내용</label>
+      <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
+       <align="center">
+            <textarea name="content" type="textaera" cols=90 rows=10 style="resize:none" minlength="30" md-maxlength="800" disabled> {{selected[0].content}}</textarea>
+      
+            
       <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
     </md-input-container>
 
   </md-content>
+  -->
+
+
+  <table border=1 width=600 cellspacing=0 align=center>
+        <tr align=center>
+          <td colspan=2 align=center>
+            <md-toolbar class="md-warn">
+              <div class="md-toolbar-tools">
+                <h2 class="md-flex">Smart Fleet Management Service 사업 연계 문의</h2>
+              </div>
+            </md-toolbar>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left" width="500">
+            <div layout="row">
+              <md-input-container flex="300">
+                <label>성 명</label>
+               <input type="text" value="{{selected[0].name}}" disabled>
+                    
+              </md-input-container>
+          </td>
+          <td align="left">
+              <md-input-container flex="300">
+                <label>회사명</label>
+                 <input type="text" value="{{selected[0].company}}" disabled>
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left">
+            <div layout="row">
+              <md-input-container flex="300">
+                <label>E-mail</label>
+                 <input type="text" value="{{selected[0].email}}" disabled>
+               
+              </md-input-container>
+          </td>
+            <td align="left">
+              <md-input-container flex="300">
+                <label>전화번호</label>
+                <input type="text" value="{{selected[0].phone}}" disabled>
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left">
+              <md-input-container flex="300">
+                <label>직 급</label>
+                <input type="text" value="{{selected[0].position}}" disabled>
+              </md-input-container>
+            </div>
+          </td>
+
+          <td>
+            <div layout="row">
+              <md-input-container flex="300">
+                <label>소 속</label>
+                <input type="text" value="{{selected[0].division}}" disabled>
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
+        <tr align="center">
+          <td align="center" width="50">
+            <md-toolbar class="md-warn">
+              <div layout="row">
+                <label>제 목</label>
+          </td>
+          <td align="center" width="500">
+            <md-toolbar class="md-warn">
+              <md-input-container md-no-float>
+                <input type="text" value="{{selected[0].title}}" disabled>
+                
+              </md-input-container>
+              </div>
+            </md-toolbar>
+          </td>
+        </tr>
+
+        <tr align=center>
+          <td colspan=2 align=center>
+            <md-input-container flex="300" md-no-float>
+            <textarea name="content" type="textaera" cols=90 rows=10 style="resize:none" minlength="30" md-maxlength="800" disabled>{{selected[0].content}} </textarea>
+            
+            </md-input-container>
+          </td>
+        </tr>
+
+        
+       </table>
 
 
 </p>
