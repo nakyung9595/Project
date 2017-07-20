@@ -32,7 +32,7 @@
 </p>
 
 <p ng-hide="selected.length == 0">
-      <md-table-container>
+      <!--<md-table-container>
             <table border=1 width=600 cellspacing=0 align=center>
                   <tr align="center">
                         <td>성 명</td>
@@ -56,7 +56,41 @@
                         <td> {{selected[0].content}} </td>
                   </tr>
             </table>
-      </md-table-container>
+      </md-table-container>-->
 
-      {{selected}}
+    
+  <md-content class="md-no-momentum">
+    <md-input-container class="md-icon-float md-block">
+      <!-- Use floating label instead of placeholder -->
+      <label>Name</label>
+      <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+      <input type="text" value="{{selected[0].name}}" disabled>
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block">
+      <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
+      <input ng-model="user.phone" type="text" placeholder="Phone Number">
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <!-- Use floating placeholder instead of label -->
+      <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
+      <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+    </md-input-container>
+
+    <md-input-container md-no-float class="md-block">
+      <input ng-model="user.address" type="text" placeholder="Address" >
+      <md-icon md-svg-src="img/icons/ic_place_24px.svg"></md-icon>
+    </md-input-container>
+
+    <md-input-container class="md-icon-float md-icon-right md-block">
+      <label>Donation Amount</label>
+      <md-icon md-svg-src="img/icons/ic_card_giftcard_24px.svg"></md-icon>
+      <input ng-model="user.donation" type="number" step="0.01">
+      <md-icon md-svg-src="img/icons/ic_euro_24px.svg"></md-icon>
+    </md-input-container>
+
+  </md-content>
+
+
 </p>
