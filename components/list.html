@@ -27,40 +27,100 @@
       </md-card>
 
       <md-table-pagination md-limit="condition.limit" md-page="condition.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks" 
-                              md-page-select="options.pageSelector">
+                           md-page-select>
       </md-table-pagination>            
+
+    <!--<pagination total-items="codes.length" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>-->
+    <!--<pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true"></pagination>-->
+
 </p>
 
+<form>
+      <p ng-hide="selected.length == 0">    
+      <table border=1 width=600 cellspacing=0 align=center>
+        <tr align=center>
+          <td colspan=2 align=center>
+            <md-toolbar class="md-warn">
+              <div class="md-toolbar-tools">
+                <h2 class="md-flex">Smart Fleet Management Service 사업 연계 문의</h2>
+              </div>
+            </md-toolbar>
+          </td>
+        </tr>
 
+        <tr>
+          <td align="left" width="500">
+            <div layout="row">
+              <md-input-container flex="300">
+                <label>성 명</label>
+                <input value="{{selected[0].name}}" readonly>
+              </md-input-container>
+          </td>
+          <td align="left">
+              <md-input-container flex="300">
+                <label>회사명</label>
+                <input value="{{selected[0].company}}" readonly>
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
 
-<p ng-show="selected.length > 0">
-      <md-table-container>
-            <input disabled>{{selected[0].name}}
-            <table border=1 width=600 cellspacing=0 align=center>
-                  <tr align="center">
-                        <td>성 명</td>
-                        <td>회사명</td>
-                        <td>이메일</td>
-                        <td>연락처</td>
-                        <td>직 급</td>
-                        <td>소 속</td>
-                        <td>제 목</td>
-                        <td>내 용</td>
-                  </tr>
+        <tr>
+          <td align="left">
+            <div layout="row">
+              <md-input-container flex="300">
+                <label>E-mail</label>
+                <input value="{{selected[0].email}}" readonly>
+              </md-input-container>
+          </td>
+            <td align="left">
+              <md-input-container flex="300">
+                <label>연락처</label>
+                <input value="{{selected[0].phone}}" readonly>
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
 
-                  <tr align="center">
-                        <td> {{selected[0].name}} </td>
-                        <td> {{selected[0].company}} </td>
-                        <td> {{selected[0].email}} </td>
-                        <td> {{selected[0].phone}} </td>
-                        <td> {{selected[0].position}} </td>
-                        <td> {{selected[0].belong}} </td>
-                        <td> {{selected[0].title}} </td>
-                        <td> {{selected[0].content}} </td>
-                  </tr>
+        <tr>
+          <td align="left">
+              <md-input-container flex="300">
+                <label>직 급</label>
+               <input value="{{selected[0].position}}" readonly>
+              </md-input-container>
+            </div>
+          </td>
+
+          <td>
+            <div layout="row">
+              <md-input-container flex="300">
+                <label>소 속</label>
+                <input value="{{selected[0].division}}" readonly> 
+              </md-input-container>
+            </div>
+          </td>
+        </tr>
+        <tr align="center">
+          <td align="center" width="50">
+            <md-toolbar class="md-warn">
+              <div layout="row">
+                <label>제 목</label>
+          </td>
+          <td align="center" width="500">
+            <md-toolbar class="md-warn">
+              <md-input-container md-no-float>
+                <input value="{{selected[0].title}}" readonly>
+              </md-input-container>
+              </div>
+            </md-toolbar>
+          </td>
+        </tr>
+
+        <tr align=center>
+          <td colspan=2 align=center>
+            <textarea type="textarea" cols=90 rows=10 style="resize:none" readonly>{{selected[0].content}}</textarea>   
+          </td>
+        </tr>
             </table>
-       
-      </md-table-container>
-
-      {{selected}}
-</p>
+      </p>
+</form>

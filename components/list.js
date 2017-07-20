@@ -15,14 +15,14 @@ angular.module('hello')
       };
 
       $scope.options = {
-        autoSelect: true,
+        // autoSelect: true,
         boundaryLinks: true,
         //largeEditDialog: true,
         pageSelector: true,
       };
 
-      $scope.limitOptions = [5, 10, 20]; 
       $scope.selected = [ ];
+      
     }
   }
 )
