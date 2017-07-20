@@ -26,13 +26,16 @@
             </md-table-container>
       </md-card>
 
-      <md-table-pagination md-limit="condition.limit" md-limit-options="limitOptions" md-page="condition.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks" 
+      <md-table-pagination md-limit="condition.limit" md-page="condition.page" md-total="{{codes.length}}" md-boundary-links="options.boundaryLinks" 
                               md-page-select="options.pageSelector">
       </md-table-pagination>            
 </p>
 
-<p ng-hide="selected.length == 0">
+
+
+<p ng-show="selected.length > 0">
       <md-table-container>
+            <input disabled>{{selected[0].name}}
             <table border=1 width=600 cellspacing=0 align=center>
                   <tr align="center">
                         <td>성 명</td>
@@ -56,6 +59,7 @@
                         <td> {{selected[0].content}} </td>
                   </tr>
             </table>
+       
       </md-table-container>
 
       {{selected}}

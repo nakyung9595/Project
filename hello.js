@@ -7,7 +7,6 @@ myApp.config(function($stateProvider) {
     { name: 'hello', url: '/hello', component: 'hello' },
     { name: 'about', url: '/about', component: 'about' },
     { name: 'list', url: '/list', component: 'list' },
-    { name: 'detail', url: '/detail', component: 'detail' },
     
     { 
       name: 'people', 
